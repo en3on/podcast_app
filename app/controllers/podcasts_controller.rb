@@ -29,6 +29,8 @@ class PodcastsController < ApplicationController
     @podcast = Podcast.find(params[:id])
 
     Podcast.delete(@podcast)
+
+    redirect_to podcasts_path
   end
   
   private
