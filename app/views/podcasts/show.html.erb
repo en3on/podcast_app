@@ -11,13 +11,20 @@
 
 <%= link_to "Delete", podcast_path(@podcast), method: :delete, class: "btn btn-danger" %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th class="col"> </th>
-    </tr>
-  </thead>
-</table>
+<%# <table class="table"> %>
+<%#   <thead> %>
+<%#     <tr> %>
+<%#       <th class="col"> </th> %>
+<%#     </tr> %>
+<%#   </thead> %>
+<%# </table> %>
+
+<h3>Episodes</h3>
+<ul>
+  <% @podcast.episodes.each do |episode| %>
+    <li><%= episode.title %>
+  <% end %>
+</ul>
 
 <h3>Create new episode</h3>
 
