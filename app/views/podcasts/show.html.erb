@@ -1,0 +1,41 @@
+<div class="jumbotron text-center">
+  <h1 class="display-1"><%= @podcast.name %></h1>
+  <p class="lead"><%= @podcast.genre %></p>
+</div>
+
+<div class="image-container">
+  <img src="<%= @podcast.image %>" alt="<%= @podcast.name %> Image">
+</div>
+
+<hr class="my-4">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="col"> </th>
+    </tr>
+  </thead>
+</table>
+
+<h3>Create new episode</h3>
+
+<form action="<%= create_episode_path %>" method="POST">
+  <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
+
+  <label for="title">Title</label>
+  <input type="text" id="title" name="title" placeholder="e.g <%= Faker::Music.album %>" />
+
+  <label for="show_notes">Show Notes</label>
+  <input type="text" id="show_notes" name="show_notes" placeholder="e.g In this episode, <%= Faker::Name.first_name %>..." />
+
+  <label for="mp3_file">MP3 File</label>
+  <input type="text" id="mp3_file" name="mp3_file" placeholder="e.g /podcast/season1/episode1.mp3" />
+
+  <label for="rating">Rating</label>
+  <input type="range" id="rating" name="rating" min="0" max="10" value="5" oninput="rating_ouput.value = rating.value" />
+  <output id="rating_ouput">5</output>
+
+  <input type="submit" value="Create">
+</form>
+
+<%= link_to "Back", root_path %>

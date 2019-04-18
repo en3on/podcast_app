@@ -1,0 +1,17 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 20vw;
+  margin: 30px;
+}
+
+.card-subtitle {
+  margin: 5px 0;
+}
+
+.card-link {
+  margin: 5px 0;
+}

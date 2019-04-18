@@ -1,0 +1,16 @@
+<div class="jumbotron text-center">
+  <h1 class="display-1">Podcasts</h1>
+</div>
+
+<div class="cards-container">
+  <% @podcasts.each do |podcast| %>
+    <div class="card border border-dark rounded">
+      <img class="card-img-top" src="<%= podcast.image %>" alt="<%= podcast.name %> Image">
+      <div class="card-body">
+        <h3 class="card-title"><%= podcast.name %></h5>
+        <h5 class="card-subtitle"><%= podcast.genre %></h5>
+        <%= link_to "Show", podcast, class: "card-link btn btn-info" %>
+      </div>
+    </div>
+  <% end %>
+</div>
